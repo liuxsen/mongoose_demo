@@ -72,8 +72,17 @@ user1.save()*/
     })
 });*/
 
+User.findOne({name:"张三"})
+    .populate("posts")
+    .exec(function(err,user){
+        if(err) console.log(err);
+        console.log(user);
+    });
+
+
+
 //4 删除文章
- Post.findOne({_id: "58c65d2f42b6d10054a8b9b2"},function(err,post){
+/* Post.findOne({_id: "58c65d2f42b6d10054a8b9b2"},function(err,post){
     if(err) console.log(err);
     console.log(post);
     let userId = post.poster;
@@ -87,4 +96,4 @@ user1.save()*/
             post.remove();
         })
     })
- });
+ });*/
